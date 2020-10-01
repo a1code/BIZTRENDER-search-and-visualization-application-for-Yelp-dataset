@@ -1,0 +1,98 @@
+<nav class="navbar navbar-default">
+	<div class="container-list">
+		<div class="navbar-header pivot">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="pull-left col-sm-1">
+						<a href="#" class="navbar-brand" style="margin-top:5px"><img src="images/project_logo_icon.png" alt=""></a>
+					</div>
+					<div class="col-sm-7" style="margin-top: 9px">
+							<div class="panel-heading">
+								<form ng-submit="getBusinessData('search')">
+									<div class="input-group">
+										<input name="query" type="text" ng-model="listSearchTerm"
+											class="form-control">
+										<span class="input-group-btn">
+											<button class="btn btn-primary" type="submit"
+												ng-disabled="!listSearchTerm">Search</button>
+										</span>
+									</div>
+								</form>
+							</div>
+					</div>
+					<div class="pull-right col-sm-4" style="margin-top: 18px">
+						<a class="btn btn-primary" ui-sref="trendSummary">Trend Summary</a>
+					</div>
+				</div>
+			</div>
+	</div>
+</div>
+</nav>
+
+<div class="container-list">
+	<div class="search-pannel">
+		<div class="panel">
+				<div class="pannel-content">
+					<div class="result-pane">
+						<div class="result-pane-row">
+							<div class="col-sm-4 col-md-3 result-pane-cell">
+								<div class="row pull-left">
+									<div class="container-list" style="margin-top: 40px" ng-if="selectedBusiness">
+										<div>
+											<p class="title">
+												<a href="" ng-dblclick="popUpDetailView(selectedBusiness)">{{selectedBusiness.name}}</a>
+											</p>
+										 	<div class="result">
+												<p>{{selectedBusiness.address}}</p>
+												<p>{{selectedBusiness.city}} {{selectedBusiness.state}} {{selectedBusiness.postal_code}}</p>
+												<p>Rating : {{selectedBusiness.stars}}</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm8 col-md-9 result-pane-cell pull-right" id="listResultTabs">
+									<div>
+										<ul>
+											<li ng-repeat="item in businessData"
+											ng-click="setSelected(item)"
+											ng-class="{selected : selectedBusiness.business_id == undefined ? $first : selectedBusiness.business_id === item.business_id}">
+												<div class="result" >
+													<p class="title">
+														<a href="" ng-dblclick="popUpDetailView(item)">{{item.name}}</a>
+													</p>
+													<p class="text-muted">{{item|json}}</p>
+												</div>
+											</li>
+										</ul>
+										<div ng-if="businessData.length <= 0" class="noRecords">
+											No Records found</div>
+										<div class="pagination" style="padding-left:250px">
+							              <ul>
+							              	<li style="display:inline" ng-class="prevPageDisabled()">
+							                  <a href ng-click="firstPage()">« First</a>
+							                </li>
+							                <li style="display:inline" ng-class="prevPageDisabled()">
+							                  <a href ng-click="prevPage()">« Prev</a>
+							                </li>
+							                <li style="display:inline" ng-repeat="n in range()" ng-class="{active: n == currentPage}" ng-click="setPage(n)">
+							                  <a>{{n+1}}</a>
+							                </li>
+							                <li style="display:inline" ng-class="nextPageDisabled()">
+							                  <a href ng-click="nextPage()">Next »</a>
+							                </li>
+							                <li style="display:inline" ng-class="nextPageDisabled()">
+							                  <a href ng-click="lastPage()"> Last»</a>
+							                </li>
+							              </ul>
+							              <p align="center" class="text-muted">Page {{currentPage + 1}} of {{pageCount()}}</p>
+							            </div>
+									</div>
+								</div>
+						</div>
+					</div>
+				</div>
+		</div>
+	</div>
+</div>
+</div>
+<!-- /.container -->

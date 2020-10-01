@@ -1,0 +1,15 @@
+*.swp
+.buildpath
+.project
+.settings/
+target
+.classpath
+.metadata
+*.class
+*~
+*\.~lock*
+*\.DS_Store
+.bin
+hs_err*
+bin/
+dependency-reduced-pom.xml

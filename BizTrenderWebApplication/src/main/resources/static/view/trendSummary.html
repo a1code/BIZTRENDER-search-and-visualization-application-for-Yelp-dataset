@@ -1,0 +1,65 @@
+<nav class="navbar navbar-default">
+	<div class="container-list">
+		<div class="navbar-header pivot">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="pull-left">
+						<a href="#" class="navbar-brand"><img src="images/project_logo_icon.png" alt=""></a>
+					</div>
+					<div style="display:flex;margin:12px">
+						<div style="padding-right:10px">
+							<label class="custom_label">Categories:</label>
+							<div class="input-group" 
+								ng-dropdown-multiselect="" 
+								options="dropdown_options_categories" 
+								selected-model="categories_model" 
+								checkboxes="true" 
+								extra-settings="dropdown_settings">
+							</div>
+						</div>
+						<div style="padding-right:10px">
+							<label class="custom_label">Ratings:</label>
+							<div class="input-group" 
+								ng-dropdown-multiselect="" 
+								options="dropdown_options_ratings" 
+								selected-model="ratings_model" 
+								checkboxes="true" 
+								extra-settings="dropdown_settings">
+							</div>
+						</div>
+						<div style="padding-right:10px">
+							<span class="input-group-btn">
+								<button class="btn btn-primary" type="submit"
+									ng-click="reloadTrends()">Reload</button>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>
+
+<div class="container-list">
+	<div class="col-sm-4" style="display:inline;float:left;width: 100%;white-space:nowrap;overflow:hidden">
+		<a style="margin-left:10px" class="btn btn-primary" ng-click="business_by_rating(false)">Rating Distribution</a>
+		<a style="margin-left:10px" class="btn btn-primary" ng-click="business_by_location(false)">Geographic Distribution</a>
+		<a style="margin-left:10px" class="btn btn-primary" ng-click="business_by_checkins(false)">Ratings vs Visits</a>
+		<a style="margin-left:10px" class="btn btn-primary" ng-click="all_checkins(false)">Visits Distribution</a>
+		<a style="margin-left:10px" class="btn btn-primary" ng-click="business_by_reviewSentimentVsTime(false)">Review Sentiment vs Time</a>
+	</div>
+</div>	
+<div class="container-list">
+	<div class="pull-left" id="figures_parent" style="height:800px;width:1200px;margin-top:20px">
+		<div id="figure_stacked_bar_chart"></div>
+		<div id="figure_map"></div>
+		<div id="figure_packed_bubble_chart"></div>
+		<div id="figure_column_chart">
+			<div id="visits_vs_days_chart"></div>
+			<div id="visits_vs_times_chart"></div>
+		</div>
+		<div id="figure_time_series"></div>
+	</div>
+</div>
+
+

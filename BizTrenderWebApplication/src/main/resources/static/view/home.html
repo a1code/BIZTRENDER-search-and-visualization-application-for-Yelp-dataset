@@ -1,0 +1,19 @@
+<div class="blank">&nbsp;</div>
+<div class="container-fluid">
+	<div class="home-search">
+		<center><img src="images/project_logo_home.png" alt=""></center>
+		<form name="searchForm">
+		  <div class="form-group">
+		  	<div class="input-group">
+				<input name="query" type="text" class="form-control" placeholder="What are you looking for?" ng-model="homeSearchTerm">
+				<span class="input-group-btn">
+					<button type="submit" class="btn btn-primary" style="padding: 12px" ng-disabled="!homeSearchTerm" ng-click="seachResults()">Search</button>
+				</span>
+			</div>
+			<div class="col-sm-4" style="margin-top: 18px;margin-left:160px">
+				<a class="btn btn-primary" ui-sref="trendSummary">Trend Summary</a>
+			</div>
+		  </div>
+		</form>
+	</div>
+</div>

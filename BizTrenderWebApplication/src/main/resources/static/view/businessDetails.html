@@ -1,0 +1,33 @@
+<nav class="navbar navbar-default">
+	<div class="container-list">
+		<div class="navbar-header pivot">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="pull-left col-sm-1">
+						<a class="navbar-brand"><img src="images/project_logo_icon.png" alt=""></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>
+
+<div class="container-list">
+	<div class="col-sm-4" style="display:inline;float:left;width: 100%;white-space:nowrap;overflow:hidden">
+		<a style="margin-left:10px" class="btn btn-primary">
+			<p><b>{{business.name}}</b> [{{business.business_id}}] </p>
+			<p>{{business.city}}, {{business.state}} {{business.postal_code}}</p>
+			<p>Rating : {{business.stars}}</p>
+		</a>
+		<a style="margin-left:10px" class="btn btn-primary" ng-click="review_sentiment(false)">Review Sentiment</a>
+		<a style="margin-left:10px" class="btn btn-primary" ng-click="ratings_and_users(false)">Ratings vs Users</a>
+		<a style="margin-left:10px" class="btn btn-primary" ng-click="tips_and_reviews(false)">Tips & Reviews</a>
+	</div>
+</div>	
+<div class="container-list">
+	<div class="pull-left" id="figures_parent" style="height:800px;width:1200px;margin-top:40px">
+		<div id="figure_histogram"></div>
+		<div id="figure_component_bars"></div>
+		<div id="figure_word_cloud"></div>
+	</div>
+</div>
