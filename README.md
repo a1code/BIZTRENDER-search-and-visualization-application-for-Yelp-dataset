@@ -1,4 +1,4 @@
-# BizTrender-a-search-and-visualization-application-for-Yelp-dataset
+# BIZTRENDER-search-and-visualization-application-for-Yelp-dataset
 
 **Dataset**: [Yelp Dataset Challenge](https://www.yelp.com/dataset)
 
