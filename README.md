@@ -1,9 +1,9 @@
 # BIZTRENDER-search-and-visualization-application-for-Yelp-dataset
 
 **Implementation Summary**:  
-• Developed a Java Spring Boot application with MVC backend and AngularJS frontend, for exploration and visualization of key entities from the Yelp Dataset 
-• Implemented data retrieval from Elasticsearch and MongoDB, and interactive plots using Highcharts.js 
-• Explored caching with Mongo GridFS and streaming HTTP responses for faster data processing 
+• Developed a Java Spring Boot application with MVC backend and AngularJS frontend, for exploration and visualization of key entities from the Yelp Dataset  
+• Implemented data retrieval from Elasticsearch and MongoDB, and interactive plots using Highcharts.js  
+• Explored caching with Mongo GridFS and streaming HTTP responses for faster data processing  
 
 **Dataset**: [Yelp Dataset Challenge](https://www.yelp.com/dataset)
 
